@@ -1,0 +1,27 @@
+# Base
+title: Blog - Dangerous Team
+baseurl: "/blog" 
+url: "https://dangerous-team.github.io"
+
+# Build settings
+theme: minima
+minima:
+  date_format: "%b %-d, %Y"
+  social_links:
+    github: Dangerous-Team
+    rss: rss
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-seo-tag
+
+markdown: kramdown
+include:
+  - _pages
+
+# Permalinks
+permalink: /:year-:month-:day/:title
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
