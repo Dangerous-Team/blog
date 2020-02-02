@@ -8,6 +8,16 @@ categories:
     - Web
     - JavaScript
 ---
+<style>
+#livephoto {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+</style>
 <script src="/blog/assets/js/livephotoskit/livephotoskit.js"></script>
 <div id="livephoto" style="width: 320px; height: 240px; margin:0px auto 15px"></div>
 <script>
@@ -18,9 +28,6 @@ player.videoSrc = '/blog/assets/file/2020-02-02-fireworks.mov';
 player.addEventListener('canplay', evt => console.log('player ready', evt));
 player.addEventListener('error', evt => console.log('player load error', evt));
 player.addEventListener('ended', evt => console.log('player finished playing through', evt));
-window.ontouchstart = function(e) { 
-    e.preventDefault(); 
-};
 </script>
 
 Live Photo (中文名: 实况照片) 是 iOS 系统相机的一个特性[^1]，它在拍照的时候可以同时摄入段 3s 的小视频。
