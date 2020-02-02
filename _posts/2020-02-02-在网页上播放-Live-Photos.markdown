@@ -51,6 +51,10 @@ Live Photo (中文名: 实况照片) 是 iOS 系统相机的一个特性[^1]，�
 
 #### 🍺Done！你现在就能看到 Live Photo 显示在你的网页上了。
 
+当然，你也可以使用 JavaScript 调用提供的 Api 显示 Live Photo，这样可以由更多的自定义选择。
+
+
+
 [^1]: 支持的机型: iPhone 6s 或更新机型、iPad (第 5 代) 或更新机型、iPad Air (第 3 代)、iPad mini (第 5 代) 和 iPad Pro (所有机型)。
 [^2]: HEVC: High Efficiency Video Coding，是一种视频压缩标准，用来以替代H.264/AVC编码标准，在2013年1月26号，HEVC正式成为国际标准。
 [^3]: HEIF: High Efficiency Image Format，是一种图像容器格式，它基于 HEVC 技术，通过使用更先进的压缩算法来实现图片的压缩存储。
