@@ -9,7 +9,7 @@ categories:
     - JavaScript
 ---
 <style>
-#livephoto {
+#livephoto, #livephoto div {
     -webkit-touch-callout: none;
 }
 </style>
