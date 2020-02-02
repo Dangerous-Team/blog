@@ -8,6 +8,11 @@ categories:
     - Web
     - JavaScript
 ---
+<style>
+#livephoto {
+    -webkit-touch-callout: none;
+}
+</style>
 <script src="/blog/assets/js/livephotoskit/livephotoskit.js"></script>
 <div id="livephoto" style="width: 320px; height: 240px; margin:0px auto 15px"></div>
 <script>
