@@ -8,11 +8,6 @@ categories:
     - Web
     - JavaScript
 ---
-<style>
-#livephoto, #livephoto div {
-    -webkit-touch-callout: none;
-}
-</style>
 <script src="/blog/assets/js/livephotoskit/livephotoskit.js"></script>
 <div id="livephoto" style="width: 320px; height: 240px; margin:0px auto 15px"></div>
 <script>
@@ -23,6 +18,9 @@ player.videoSrc = '/blog/assets/file/2020-02-02-fireworks.mov';
 player.addEventListener('canplay', evt => console.log('player ready', evt));
 player.addEventListener('error', evt => console.log('player load error', evt));
 player.addEventListener('ended', evt => console.log('player finished playing through', evt));
+window.ontouchstart = function(e) { 
+    e.preventDefault(); 
+};
 </script>
 
 Live Photo (中文名: 实况照片) 是 iOS 系统相机的一个特性[^1]，它在拍照的时候可以同时摄入段 3s 的小视频。
@@ -54,7 +52,7 @@ Live Photo (中文名: 实况照片) 是 iOS 系统相机的一个特性[^1]，�
 ```
 > 图片和视频一定一定一定要放在跟网页同一的服务容器内不然你将得到 `No 'Access-Control-Allow-Origin' header` 跨域警告
 
-#### 🍺Done！你现在就能看到 Live Photo 显示在你的网页上了。
+#### 🍺 Done！你现在就能看到 Live Photo 显示在你的网页上了。
 
 当然，你也可以使用 JavaScript 调用提供的 Api 显示 Live Photo，这样可以由更多的自定义选择。
 
