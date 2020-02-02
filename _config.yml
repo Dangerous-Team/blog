@@ -2,6 +2,7 @@
 title: Blog - Dangerous Team
 baseurl: "/blog" 
 url: "https://dangerous-team.github.io"
+lang: "zh-CN"
 
 # Build settings
 theme: minima

@@ -121,7 +121,7 @@
     body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
 
     /** Basic styling */
-    body { font: 400 16px/1.5 monospace, "Microsoft YaHei", "PingFangSC-Regular", sans-serif, "Apple Color Emoji"; color: #fcfcfc; background-color: #000; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; display: flex; min-height: 100vh; flex-direction: column; overflow-wrap: break-word; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
+    body { font: 400 16px/1.5 "Menlo", monospace, "Microsoft YaHei", "PingFangSC-Regular", sans-serif, "Apple Color Emoji"; color: #fcfcfc; background-color: #000; -webkit-text-size-adjust: 100%; -webkit-font-feature-settings: "kern" 1; -moz-font-feature-settings: "kern" 1; -o-font-feature-settings: "kern" 1; font-feature-settings: "kern" 1; font-kerning: normal; display: flex; min-height: 100vh; flex-direction: column; overflow-wrap: break-word; padding-bottom: constant(safe-area-inset-bottom); padding-bottom: env(safe-area-inset-bottom); }
 
     /** Set `margin-bottom` to maintain vertical rhythm */
     h1, h2, h3, h4, h5, h6, p, blockquote, pre, ul, ol, dl, figure, .highlight { margin-bottom: 15px; }
@@ -170,9 +170,9 @@
 
     pre > code { border: 0; padding-right: 0; padding-left: 0; }
 
-    .highlight { border-radius: 3px; background: #1b1b1b; }
+    .highlight { border-radius: 3px; background: #242424; }
 
-    .highlighter-rouge .highlight { background: #1b1b1b; }
+    .highlighter-rouge .highlight { background: #242424; }
 
     /** Wrapper */
     .wrapper { max-width: calc(800px - (30px)); margin-right: auto; margin-left: auto; padding-right: 15px; padding-left: 15px; }
@@ -318,4 +318,6 @@
     /** Grid helpers */
     @media screen and (min-width: 800px) { .one-half { width: calc(50% - (30px / 2)); } }
 
+    /* markdown 角标 */
+    .footnotes { font-size: smaller; margin-top: 30px; }
 }
