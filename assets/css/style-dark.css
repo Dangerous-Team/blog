@@ -209,7 +209,7 @@
 
     .site-title { font-weight: normal; margin-bottom: 0; vertical-align: middle }
 
-    @media screen and (max-width: 600px) { .site-title { padding-right: 45px; } }
+    @media screen and (max-width: 600px) { .site-title { padding-right: 45px; } .site-header { padding-left: 0 } }
 
     .site-title, .site-title:visited { color: #fff; }
 
