@@ -1,8 +1,10 @@
 # Base
-title: Blog - Dangerous Team
+title: D.T. Blog
 baseurl: "/blog" 
-url: "https://dangerous-team.github.io"
+url: "https://dangerous-team.com"
 lang: "zh-CN"
+home: "https://dangerous-team.com"
+show_excerpts: ture
 
 # Build settings
 theme: minima

@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "在网页上播放 Live Photos"
+title:  "在网页上播放 Live Photo"
 author: "彭淜"
-date:   2020-02-02 13:45:00 +0800
+email:  "bexon@foxmail.com"
+date:   "2020-02-02"
 lang:   "zh-CN"
-categories: 
-    - Web
-    - JavaScript
+categories: ["Web", "JavaScript"]
+excerpt: "使用 Apple 官方提供的 LivePhotosKit，将你用 iPhone 拍摄千奇百怪的 Live Photo 放在你的个人网站里面展示。"
 ---
 <style>
 #livephoto {
