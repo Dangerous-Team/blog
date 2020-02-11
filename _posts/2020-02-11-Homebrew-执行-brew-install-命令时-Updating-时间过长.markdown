@@ -6,9 +6,9 @@ email:  "bexon@foxmail.com"
 date:   "2020-02-11"
 lang:   "zh-CN"
 categories: ["Web", "Mac"]
-excerpt: "Homebrew 是一款 Mac OS 平台下的软件包管理工具，使用它可以非常轻松地安装、卸载、更新、查看、搜索软件包。本文中将使用阿里巴巴的镜像解决在安装软件时，由于国内网络不稳定而造成的 Updating Homebrew 过程时间过长"
+excerpt: "Homebrew 是一款 macOS, Linux 平台下的软件包管理工具，使用它可以非常轻松地安装、卸载、更新、查看、搜索软件包。本文中将使用阿里巴巴的镜像解决在安装软件时，由于国内网络不稳定而造成的 Updating Homebrew 过程时间过长"
 ---
-由于 Homebrew 官方使用的是 GitHub 来做源，但 GitHub 即使归于微软公司麾下来，在国内的网络环境下还是非常不稳定，所以在使用 Homebrew 安装软件包的时可能会长时间卡在 Updating Homebrew... 这个步骤，如下。
+由于 Homebrew[^1] 官方使用的是 GitHub 来做源，但 GitHub 即使归于微软公司麾下了，在国内的网络环境下还是非常不稳定，所以在使用 Homebrew 安装软件包的时可能会长时间卡在 Updating Homebrew... 这个步骤，如下。
 ```bash
 ➜ ~ brew install imagemagick                                              
 Updating Homebrew...
@@ -82,3 +82,5 @@ source ~/.bash_profile
 ```
 
 🍺  Done!
+
+[^1]: 适用于 macOS, Linux 的缺失包管理器
