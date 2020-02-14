@@ -270,7 +270,9 @@ table td { border: 1px solid #e8e8e8; }
 
 .post-list { margin-left: 0; list-style: none; }
 
-.post-list > li { margin-bottom: 30px; }
+.post-list > li { margin-bottom: 30px; border-bottom: 1px rgba(232, 232, 232, 0.62) solid; padding-bottom: 30px;}
+
+.post-list > li:last-child { margin-bottom: 30px; border-bottom: 0; padding-bottom: 0;}
 
 .post-meta { font-size: 14px; color: #828282; }
 
