@@ -263,6 +263,8 @@
     .footer-col:last-child { padding-right: 0; padding-left: 15px; } }
 
     /** Page content */
+    .page-head-image { margin-top: -20px; margin-bottom: 10px !important; }
+
     .page-content { padding: 30px 0; flex: 1 0 auto; }
 
     .page-heading { font-size: 2rem; }
@@ -274,6 +276,8 @@
     .post-list > li { margin-bottom: 30px; border-bottom: 1px solid rgba(78, 78, 78, 0.39); padding-bottom: 30px;}
 
     .post-list > li:last-child { margin-bottom: 30px; border-bottom: 0; padding-bottom: 0;}
+
+    .post-head-image { height: 260px; border: 1px solid rgba(78, 78, 78, 0.39); background-repeat: no-repeat;  background-size: cover;  background-position: center; border-radius: 8px; margin-bottom: 5px; }
 
     .post-meta { font-size: 14px; color: #ddd; }
 

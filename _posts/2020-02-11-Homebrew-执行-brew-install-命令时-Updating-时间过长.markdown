@@ -1,12 +1,13 @@
 ---
-layout: post
-title:  "Homebrew 执行 brew install 命令时 Updating Homebrew 时间过长"
-author: "彭淜"
-email:  "bexon@foxmail.com"
-date:   "2020-02-11"
-lang:   "zh-CN"
-categories: ["Web", "Mac"]
-excerpt: "Homebrew 是一款 macOS, Linux 平台下的软件包管理工具，使用它可以非常轻松地安装、卸载、更新、查看、搜索软件包。本文中将使用阿里巴巴的镜像解决在安装软件时，由于国内网络不稳定而造成的 Updating Homebrew 过程时间过长"
+layout: post # 勿修改
+title:  "Homebrew 执行 brew install 命令时 Updating Homebrew 时间过长" # 文章标题
+author: "彭淜" # 作者，联合作者使用数组，如["作者甲", "作者乙"]
+email:  "bexon@foxmail.com" # 作者邮箱
+date:   "2020-02-11 13:20:00" # 发布时间，时分秒可以不填
+lang:   "zh-CN" # 语言
+image:  "/blog/assets/file/2020-02-14-homebrew.png" # 头部的图片，建议使用横向图片超出地方会被裁剪
+categories: ["Web", "Mac"] # 分类
+excerpt: "Homebrew 是一款 macOS, Linux 平台下的软件包管理工具，使用它可以非常轻松地安装、卸载、更新、查看、搜索软件包。本文中将使用阿里巴巴的镜像解决在安装软件时，由于国内网络不稳定而造成的 Updating Homebrew 过程时间过长" # 在列表时小时的摘要，如果為空则显示前面几句
 ---
 由于 Homebrew[^1] 官方使用的是 GitHub 来做源，但 GitHub 即使归于微软公司麾下了，在国内的网络环境下还是非常不稳定，所以在使用 Homebrew 安装软件包的时可能会长时间卡在 Updating Homebrew... 这个步骤，如下。
 ```bash

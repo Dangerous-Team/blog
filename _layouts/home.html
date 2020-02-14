@@ -25,7 +25,19 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
+        {%- if post.image -%}
+          <div class="post-head-image" style="background-image: url('{{ post.image }}')"></div>
+        {%- endif -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
+        {%- if post.author -%}
+        <span class="post-meta"> • </span>
+          {% for author in post.author %}
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="p-author h-card post-meta" itemprop="name">{{ author }}</span></span>
+            {%- if forloop.last == false %}, 
+          {% endif -%}
+        {% endfor %}
+      {%- endif -%}
         <h3>
           <a class="post-link" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
