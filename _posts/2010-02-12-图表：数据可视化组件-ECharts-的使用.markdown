@@ -1,0 +1,173 @@
+---
+layout: post
+title:  "图表：数据可视化组件 ECharts 的简单使用"
+author: "彭淜"
+email:  "bexon@foxmail.com"
+date:   "2020-01-12"
+lang:   "zh-CN"
+categories: ["Web", "JavaScript"]
+excerpt: "开源的来自百度商业前端数据可视化组件 ECharts 的简单使用。"
+---
+<style>
+/** Bar chart **/
+#echarts-1 {
+    width: 100%;
+    height:400px;
+    margin: 0px auto;
+}
+/** Coxcomb **/
+#echarts-2 {
+    width: 100%;
+    height:400px;
+    margin: 0px auto;
+}
+/** Line chart **/
+#echarts-3 {
+    width: 100%;
+    height:400px;
+    margin: 0px auto;
+}
+/** Remix: bar chart × line chart **/
+#echarts-4 {
+    width: 100%;
+    height:400px;
+    margin: 0px auto;
+}
+</style>
+
+<!-- ECharts 试例 -->
+<h2>1. 条形图(Bar chart)</h2>
+<div id="echarts-1"></div>
+<p style="text-align: center;">* 实际中使用不要乱用颜色，由美工指定。</p>
+<br />
+<h2>2. 南丁格尔玫瑰图(Coxcomb)</h2>
+<div id="echarts-2"></div>
+<br />
+<h2>3. 折线图(Line chart)</h2>
+<div id="echarts-3"></div>
+<br />
+<h2>4. 混合形图表(Remix: bar × line)</h2>
+<div id="echarts-4"></div>
+<br />
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/4.8.0/echarts.min.js"></script>
+<script>
+// Bar chart
+// 基于准备好的dom，初始化 echarts-1 实例
+var echart1 = echarts.init(document.getElementById('echarts-1'));
+// echarts-1 data and options
+var option1 = {
+    title: {
+        text: '人员地域分布'
+    },
+    tooltip: {},
+    legend: {
+        data: ['人数']
+    },
+    xAxis: {
+        data: ["深圳", "上海", "重庆", "北京", "长沙", "衡阳"]
+    },
+    yAxis: {},
+    series: [{
+        name: '人数',
+        type: 'bar',
+        data: [15, 22, 33, 12, 14, 13],
+        itemStyle: {
+            normal: {
+                color: function (params) {
+                    var colorList = ['#759aa0', '#eedd78', '#73a373', '#73b9bc', '#91ca8c', '#f49f42'];
+                    return colorList[params.dataIndex]
+                }
+            }
+        },
+    }]
+};
+// show echarts-1
+echart1.setOption(option1);
+
+// Coxcomb
+var echart2 = echarts.init(document.getElementById('echarts-2'));
+var option2 = {
+    title: {
+        text: '人员地域分布'
+    },
+    series: [
+        {
+            name: '人员地域分布',
+            type: 'pie',
+            radius: '55%',
+            roseType: 'angle',
+            data: [
+                { value: 15, name: '深圳' },
+                { value: 22, name: '上海' },
+                { value: 33, name: '重庆' },
+                { value: 22, name: '北京' },
+                { value: 14, name: '长沙' },
+                { value: 23, name: '衡阳' }
+            ]
+        }
+    ]
+}
+echart2.setOption(option2)
+
+// Line chart
+var echart3 = echarts.init(document.getElementById('echarts-3'));
+var option3 = {
+    title: {
+        text: '地域活越分布人数'
+    },
+    tooltip: {},
+    legend: {
+        data: ['人数']
+    },
+    xAxis: {
+        data: ["深圳", "上海", "重庆", "北京", "长沙", "衡阳"]
+    },
+    yAxis: {},
+    visualMap: {
+        pieces: [{
+            gt: 0,
+            lte: 15,
+            color: '#ff0000',
+        }, {
+            gt: 15,
+            color: '#096',
+        }],
+        outOfRange: {
+            color: '#096'
+        }
+    },
+    series: [{
+        name: '人数',
+        type: 'line',
+        data: [10, 15, 30, 10, 12, 9],
+    }]
+}
+echart3.setOption(option3)
+
+// Remix: bar chart × line chart 
+var echart4 = echarts.init(document.getElementById('echarts-4'));
+var option4 = {
+    title: {
+        text: '人员地域分布'
+    },
+    tooltip: {},
+    legend: {
+        data: ['人数']
+    },
+    xAxis: {
+        data: ["深圳", "上海", "重庆", "北京", "长沙", "衡阳"]
+    },
+    yAxis: {},
+    series: [{
+        name: '人数',
+        type: 'bar',
+        data: [15, 22, 33, 12, 14, 13],
+        color:"#096"
+    },{
+        name: '人数',
+        type: 'line',
+        data: [10, 15, 30, 10, 12, 9],
+    }]
+};
+echart4.setOption(option4)
+</script>
