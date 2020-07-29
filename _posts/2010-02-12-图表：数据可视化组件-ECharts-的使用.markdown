@@ -3,7 +3,7 @@ layout: post
 title:  "图表：数据可视化组件 ECharts 的简单使用"
 author: "彭淜"
 email:  "bexon@foxmail.com"
-date:   "2020-01-12"
+date:   "2020-02-12"
 lang:   "zh-CN"
 categories: ["Web", "JavaScript"]
 excerpt: "开源的来自百度商业前端数据可视化组件 ECharts 的简单使用。"
