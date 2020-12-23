@@ -1,0 +1,112 @@
+---
+layout: post
+title:  "2D 矩阵公式"
+author: "彭淜"
+email:  "bexon@foxmail.com"
+date:   "2020-12-23"
+lang:   "zh-CN"
+image:  "https://img-blog.csdn.net/20170309182555023"
+categories: ["计算机图形学]
+excerpt: "基本的二维几何变换"
+---
+[toc]
+
+# 縮放 (Scaling)
+
+一個二維矩陣可以通過 **縮放係數 scaling factor** $s_x$ 與 $s_y$ 進行簡單的縮放操作。
+
+將對象座標 ( x, y ) 與 $s_x$ $s_y$ 乘積可得：
+
+$$x' = x \cdot s_{x'}$$
+$$y' = y \cdot s_y$$
+
+$s_x$ 為在 x 方向進行縮放，$s_y$ 為在 y 方向上的縮放，基本的縮放方程也可寫成矩陣的形式：
+
+$$
+\left[\begin{array}{l}
+x' \\
+y'
+\end{array}\right]=\left[\begin{array}{ll}
+s_x & 0 \\
+0 & s_x
+\end{array}\right] \cdot\left[\begin{array}{l}
+x \\
+y
+\end{array}\right]
+$$
+
+或：
+
+$$
+P’ = S \cdot P 
+$$
+
+![缩放](https://img-blog.csdn.net/20170309182555023)
+
+也可以选择一个在缩放变换后不改变位置的 **固定点(fixed point)**，以控制缩放后对象的位置。固定点的坐标 ( $x_f$, $y_f$ ) 可以选择对象的中点等位置或任何其他空间位置。这样，多边形通过缩放每个顶点到固定点的距离而相对于固定点进行缩放。对于坐标为 ( x, y ) 的顶点，缩放后的坐标( x', y' )可计算为：
+
+$$x' - x_f = (x - x_f)s_{x'}$$
+$$y' - y_f = (y - y_f)s_y$$
+
+将乘积项和加法项分开而重写上述缩放变换公式：
+
+$$x' = x \cdot s_x + x_f(1 - s_x)$$
+$$y' = y \cdot s_y + y_f(1 - s_y)$$
+
+其中，加法项 $x_f(1-s_x)$ 和 $y_f(1 - s_y)$ 对于对象中的任何点都是常数。
+
+# 旋转 (Rotation)
+
+![旋转](https://img-blog.csdn.net/20170303162017846)
+
+为了简化该基本方法的叙述，先确定当基准点为坐标原点时点位置 P 进行旋转的变换方程。原始点和变换后点位置的角度和坐标关系如图所示。其中，r 是点到原点的固定距离，角Φ是点的原始角度位置与水平线的夹角，θ是旋转角。应用标准的三角等式，我们可以利用角度θ和Φ将转换后的坐标表示为方程1：
+
+$$x' = r\ cos(\phi + \theta) = r\ cos\phi cos\theta - r\ sin\phi sin\theta$$
+$$y' = r\ sin(\phi + \theta) = r\ cos\phi sin\theta + r\ sin\phi cos\theta$$
+
+在极坐标中，点的原始坐标为方程2:
+
+$$x = r\ cos\phi,\ \ \ y=r\ sin\phi$$
+
+将方程2代人方程1中，我们就得到相对于原点，将位置(x, y)的点旋转$\theta$角的变换方程3:
+
+$$x' = x\ cos\theta - y\ sin\theta$$
+$$y' = x\ sin\theta + y\ cos\theta$$
+
+因为列向量表达式表示坐标位置为：
+
+$$
+P = \left[\begin{array}{l}
+x \\
+y
+\end{array}\right],\ \ \ 
+P' = \left[\begin{array}{l}
+x' \\
+y'
+\end{array}\right],\ \ \ 
+T = \left[\begin{array}{l}
+t_x \\
+t_y
+\end{array}\right]
+$$
+
+那么旋转方程的矩阵形式为方程4:
+
+$$P' = R \cdot P$$
+
+其中，旋转矩阵为
+
+$$
+R=\left[\begin{array}{ll}
+cos\theta & -sin\theta \\
+sin\theta & cos\theta
+\end{array}\right]
+$$
+
+![绕点基点旋转](https://img-blog.csdn.net/20170303162607164)
+
+方程2中给出了绕任意基准点旋转一个点的例子。利用图中的三角关系，可以将方程3规范化为绕任意指定的旋转位置( $x_r$ , $y_r$ )旋转的点的变换方程5
+
+$$x'=x_r+(x-x_r)cos\theta-(y-y_r)sin\theta$$
+$$y'=y_r+(x-x_r)sin\theta+(y-y_r)cos\theta$$
+
